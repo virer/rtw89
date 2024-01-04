@@ -5693,7 +5693,7 @@ static inline u8 *get_hdr_bssid(struct ieee80211_hdr *hdr)
 
 static inline bool rtw89_sta_has_beamformer_cap(struct ieee80211_sta *sta)
 {
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,19,0) && (RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(9, 0)))
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,19,0) || (RHEL_RELEASE_CODE >= RHEL_RELEASE_VERSION(9, 0)))
 	if ((sta->deflink.vht_cap.cap & IEEE80211_VHT_CAP_MU_BEAMFORMER_CAPABLE) ||
             (sta->deflink.vht_cap.cap & IEEE80211_VHT_CAP_SU_BEAMFORMER_CAPABLE) ||
             (sta->deflink.he_cap.he_cap_elem.phy_cap_info[3] &
